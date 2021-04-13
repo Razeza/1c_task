@@ -9,7 +9,13 @@ add_compile_options(
         -Wall -Wextra
 )
 
-set(INCLUDE_DIR ${1c-submission_SOURCE_DIR}/inc)
+OPTION(TEST "Test Option" OFF)
+
+if (TEST)
+    ADD_DEFINITIONS(-DTEST)
+endif (TEST)
+
+set(INCLUDE_DIR include)
 set(SOURCES src/main.cpp)
 # set(TEST_DIR ${1c-submission_SOURCE_DIR}/test)
 

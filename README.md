@@ -18,13 +18,12 @@
 В директорию проета в консоли:
 ```bash
 mkdir build && cd build
-cd cmake .. && make
+cd cmake [-DTEST=ON] .. && make
 cd ..
 ```
-
+[...] - опционально.
+* -DTEST=ON - возможность тестирования.
 ## Запуск
 ```bash
 ./build/solution
-Secret decoder
-Usage: ./build/solution TEXT_FILE.txt
 ```
