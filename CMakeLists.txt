@@ -15,11 +15,9 @@ if (TEST)
     ADD_DEFINITIONS(-DTEST)
 endif (TEST)
 
-set(INCLUDE_DIR include)
 set(SOURCES src/main.cpp)
 # set(TEST_DIR ${1c-submission_SOURCE_DIR}/test)
 
-include_directories(${INCLUDE_DIR})
 
 add_executable(
         solution
