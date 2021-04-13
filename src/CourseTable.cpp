@@ -20,18 +20,22 @@
 #include <sstream>
 
 
-void CourseTable::dp_start(size_t fifth_course) {
-    std::vector<int> dp(100000000);
+int CourseTable::dp_start(size_t course) {
+    std::vector<int> dp(max_courses);
 
     for (auto &i: dp) {
         i = -1;
     }
 
-    for (auto& [key, value] : table_[0]) {
-        dp[key] = 0;
+    for (size_t i = 0; i < max_priority_ - 1; ++i) {
+        for (auto&[key, value] : table_[i]) {
+            if (table_[i].empty()) {
+                dp[key] = 0;
+            }
+        }
     }
 
-    std::cout << lazy_dfs(fifth_course, dp, max_priority_ - 1);
+    return lazy_dfs(fifth_course, dp, max_priority_ - 1);
 }
 
 int CourseTable::lazy_dfs(size_t key, std::vector<int>& dp, size_t level) {
